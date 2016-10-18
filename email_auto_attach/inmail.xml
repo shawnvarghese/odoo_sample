@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<openerp>
+	<data>
+		<record id="incoming_fetch_mail" model="ir.actions.act_window">
+			<field name="name">Incoming Mails</field>
+			<field name="res_model">incoming.mail.ep</field>
+			<field name="view_type">form</field>
+			<field name="view_mode">tree,form</field>
+		</record>
+		
+		<record id="incoming_fetch_mail_form" model="ir.ui.view">
+			<field name="name">Incoming Mails</field>
+			<field name="model">incoming.mail.ep</field>
+			<field name="type">form</field>
+			<field name="arch" type="xml">
+				<form string="Incoming Mails">
+					<header>
+							<button name="map_message" type="object"
+									string="Map Attachment" />
+						</header>
+					<sheet>
+						<group>
+							<field name="name"/>
+							<field name="model" />
+							<field name="doc_number" />
+							<field name="doc_msg" />
+						</group>
+						<group>
+							<field name="email_from"/>
+							<field name="email_cc"/>
+							<field name="user_id"/>
+							<field name="partner_id"/>
+							<field name="description"/>
+						</group>
+				</sheet>
+				</form>
+			</field>
+		</record>
+		
+		<record id="incoming_fetch_mail_tree" model="ir.ui.view">
+			<field name="name">Incoming Mails</field>
+			<field name="model">incoming.mail.ep</field>
+			<field name="type">tree</field>
+			<field name="arch" type="xml">
+				<tree string="Incoming Mails">
+					<field name="name" string="Subject"/>
+					<field name="email_from" string="From"/>
+				</tree>
+			</field>
+		</record>
+		
+		<!-- <menuitem id="fetch_mail" name="Fetch Mails" groups="base.group_system" sequence="17" /> -->
+		<!-- <menuitem id="fetch_mail_parent" name="Fetch Mails" parent="base.menu_email" /> -->
+		<menuitem id="fetch_mail_child" name="Fetch Incoming Attachments" 
+					parent="base.menu_email" 
+					action="incoming_fetch_mail" sequence="17"/>
+		
+	</data>
+</openerp>

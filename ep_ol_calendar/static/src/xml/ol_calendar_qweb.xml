@@ -1,0 +1,14 @@
+<template>
+    <t t-name="outlook_sync">
+        <div >
+            <center>
+                <br/>                                
+                <button class="ol_sync oe_button">
+                    <span>
+                        <img src="/google_calendar/static/src/img/calendar_32.png"/> Sync with <b>365</b>
+                    </span>
+                </button>
+            </center>
+        </div>
+    </t>        
+</template>

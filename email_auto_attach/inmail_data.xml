@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<openerp>
+    <data>
+		<!-- Server actions for incoming mail -->
+		<record model="ir.actions.server" id="action_map_message">
+		    <field name="name">Map Message</field>
+		    <field name="model_id" ref="model_incoming_mail_ep" />
+		    <field name="state">code</field>
+		    <field name="code">object.map_message()</field>
+		</record>
+	</data>
+
+	<data noupdate="1">
+		<!-- Incoming mail server configuration -->
+		<record id="fetchmail_server_map_message" model="fetchmail.server">
+			<field name="name">Map Message</field>
+			<field name="server">localhost</field>
+			<field name="user">username</field>
+			<field name="password">password</field>
+			<field name="object_id" ref="email_auto_attach.model_incoming_mail_ep" />
+			<field name="action_id" ref="email_auto_attach.action_map_message" />
+		 </record>
+	</data>
+</openerp>

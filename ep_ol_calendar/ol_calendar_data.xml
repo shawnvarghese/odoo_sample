@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+    <data>
+        <template id="assets_backend" name="ep_onedrive_asset" inherit_id="web.assets_backend">
+            <xpath expr="." position="inside">
+            	<link rel="stylesheet" href="/ep_ol_calendar/static/src/css/ep_calendar_style.css" />
+                <script type="text/javascript" src="/ep_ol_calendar/static/src/js/ol_calendar_integration.js" />
+            </xpath>
+        </template>        
+   </data>
+</openerp>
